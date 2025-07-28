@@ -16,27 +16,3 @@ nvm use --lts
 composer run dev
 
 
-php artisan make:model Post -m
-php artisan migrate
-php artisan make:controller PostController --resource
-
-php artisan make:model Project -m
-php artisan make:controller ProjectController --resource
-
-
-change posts table body to be nullable
-php artisan migrate:rollback
-php artisan migrate
-
-
-..removed lots of files..
-
-composer dump-autoload
-php artisan view:clear
-php artisan config:clear
-npm run dev
-
-composer run dev
-
----------------------
-
