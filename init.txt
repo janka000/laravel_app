@@ -1,0 +1,16 @@
+composer global require laravel/installer
+
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+laravel new example-app
+cd example-app
+npm install && npm run build
+composer run dev
+(failed)
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install --lts
+nvm use --lts
+
+composer run dev
