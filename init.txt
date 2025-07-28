@@ -17,3 +17,7 @@ composer run dev
 
 
 php artisan make:model Post -m
+
+php artisan migrate
+
+php artisan make:controller PostController --resource

@@ -15,6 +15,8 @@
             <div class="card-body">
                 <h3>{{ $post->title }}</h3>
                 <p>{{ $post->body }}</p>
+                <a href="{{ route('posts.show', $post) }}" class="btn btn-info btn-sm">Show</a>
+
                 <a href="{{ route('posts.edit', $post) }}" class="btn btn-warning btn-sm">Edit</a>
 
                 <form action="{{ route('posts.destroy', $post) }}" method="POST" style="display:inline-block;">
