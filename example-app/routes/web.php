@@ -13,13 +13,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
-require __DIR__.'/settings.php';
-require __DIR__.'/auth.php';
-
-
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PostController;
+
 Route::resource('posts', PostController::class);
 
-use App\Http\Controllers\ProjectController;
 Route::resource('project', ProjectController::class);
 

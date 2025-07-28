@@ -27,3 +27,13 @@ php artisan make:controller ProjectController --resource
 change posts table body to be nullable
 php artisan migrate:rollback
 php artisan migrate
+
+
+..removed lots of files..
+
+composer dump-autoload
+php artisan view:clear
+php artisan config:clear
+npm run dev
+
+composer run dev
