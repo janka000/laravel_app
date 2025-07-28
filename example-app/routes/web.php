@@ -18,5 +18,8 @@ require __DIR__.'/auth.php';
 
 
 use App\Http\Controllers\PostController;
-
 Route::resource('posts', PostController::class);
+
+use App\Http\Controllers\ProjectController;
+Route::resource('project', ProjectController::class);
+
