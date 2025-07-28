@@ -22,3 +22,8 @@ php artisan make:controller PostController --resource
 
 php artisan make:model Project -m
 php artisan make:controller ProjectController --resource
+
+
+change posts table body to be nullable
+php artisan migrate:rollback
+php artisan migrate

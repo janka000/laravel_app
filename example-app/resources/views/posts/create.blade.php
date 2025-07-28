@@ -23,7 +23,7 @@
 
         <div class="mb-3">
             <label>Body</label>
-            <textarea name="body" class="form-control" rows="5" required>{{ old('body') }}</textarea>
+            <textarea name="body" class="form-control" rows="5">{{ old('body') }}</textarea>
         </div>
 
         <button class="btn btn-primary" type="submit">Create Post</button>

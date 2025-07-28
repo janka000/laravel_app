@@ -25,7 +25,6 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'body' => 'required',
         ]);
 
         Post::create($request->all());
@@ -49,7 +48,6 @@ class PostController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'body' => 'required',
         ]);
 
         $post->update($request->all());

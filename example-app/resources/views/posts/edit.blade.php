@@ -25,7 +25,7 @@
 
         <div class="mb-3">
             <label>Body</label>
-            <textarea name="body" class="form-control" rows="5" required>{{ old('body', $post->body) }}</textarea>
+            <textarea name="body" class="form-control" rows="5">{{ old('body', $post->body) }}</textarea>
         </div>
 
         <button class="btn btn-primary" type="submit">Update Post</button>
