@@ -13,10 +13,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 });
 
-use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TodoController;
 use App\Http\Controllers\PostController;
 
 Route::resource('posts', PostController::class);
 
-Route::resource('project', ProjectController::class);
+Route::resource('todo', TodoController::class);
 
