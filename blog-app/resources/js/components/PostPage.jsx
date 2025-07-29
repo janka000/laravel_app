@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 
 export default function PostPage() {
   const { id } = useParams();
@@ -39,9 +40,11 @@ export default function PostPage() {
   if (!post) return <div>Post not found.</div>;
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 mb-5">
       <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <ReactMarkdown>
+        {post.body}
+      </ReactMarkdown>
 
       <div style={{ marginTop: '20px' }}>
         {/* Back to posts page */}

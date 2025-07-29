@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 
 export default function BlogMain() {
   const [posts, setPosts] = useState([]);
@@ -44,7 +45,9 @@ export default function BlogMain() {
               <div className="card shadow-sm hover-shadow">
                 <div className="card-body">
                   <h2 className="card-title">{post.title}</h2>
-                  <p className="card-text text-truncate">{post.body}</p>
+                  <p className="card-text text-truncate">
+                          {post.body}
+                        </p>
                 </div>
               </div>
             </Link>
