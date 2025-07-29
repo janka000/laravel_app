@@ -48,5 +48,5 @@ Route::delete('/api/posts/{post}', function (Post $post) {
 
 // Catch-all route for React app - let React Router handle front-end routing
 Route::get('/{any}', function () {
-    return view('app'); // Your main React app blade view
+    return view('app'); // main React app blade view
 })->where('any', '.*');

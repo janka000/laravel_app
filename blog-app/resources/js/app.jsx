@@ -8,6 +8,7 @@ import BlogMain from './components/BlogMain';
 import PostPage from './components/PostPage';
 import EditPost from './components/EditPost';
 import CreatePost from './components/CreatePost';
+import Navbar from './components/Navbar';
 
 const el = document.getElementById('app');
 
@@ -16,12 +17,15 @@ if (el) {
 
   ReactDOM.createRoot(el).render(
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<BlogMain posts={posts} />} />
-        <Route path="/posts/:id" element={<PostPage />} />
-        <Route path="/posts/:id/edit" element={<EditPost />} />
-        <Route path="/posts/create" element={<CreatePost />} />
-      </Routes>
+      <>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<BlogMain posts={posts} />} />
+          <Route path="/posts/:id" element={<PostPage />} />
+          <Route path="/posts/:id/edit" element={<EditPost />} />
+          <Route path="/posts/create" element={<CreatePost />} />
+        </Routes>
+      </>
     </BrowserRouter>
   );
 }
