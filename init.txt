@@ -21,4 +21,9 @@ composer create-project laravel/laravel blog-app
 npm install
 npm install react react-dom
 
+npm install @vitejs/plugin-react --save-dev
+npm install concurrently --save-dev
+
+npm run dev
+
 
