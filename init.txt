@@ -16,3 +16,9 @@ nvm use --lts
 composer run dev
 
 
+/////////////////////////////blog/////////////////
+composer create-project laravel/laravel blog-app
+npm install
+npm install react react-dom
+
+
