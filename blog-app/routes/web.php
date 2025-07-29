@@ -4,6 +4,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+
 // API: Get all posts
 Route::get('/api/posts', function () {
     return Post::latest()->get();

@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-export default function BlogMain({ posts }) {
+export default function BlogMain() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    axios.get('/api/posts')
+      .then(response => {
+        setPosts(response.data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setError('Failed to load posts');
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <div className="container my-5">Loading posts…</div>;
+  if (error) return <div className="container my-5 text-danger">{error}</div>;
+
   return (
     <main className="container my-5">
       <h1 className="mb-4 text-center">My Blog</h1>
