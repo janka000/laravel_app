@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default function PostPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +27,18 @@ export default function PostPage() {
     <div className="container mt-5">
       <h1>{post.title}</h1>
       <p>{post.body}</p>
-      {/* add edit link, etc */}
+
+      <div style={{ marginTop: '20px' }}>
+        {/* Back to posts page */}
+        <button onClick={() => navigate('/')} className="btn btn-secondary me-2">
+          Back to Posts
+        </button>
+
+        {/* Edit post page */}
+        <Link to={`/posts/${id}/edit`} className="btn btn-primary">
+          Edit Post
+        </Link>
+      </div>
     </div>
   );
 }
