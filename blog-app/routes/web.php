@@ -40,6 +40,12 @@ Route::put('/api/posts/{post}', function (Request $request, Post $post) {
     return response()->json($post);
 });
 
+// API: Delete a post
+Route::delete('/api/posts/{post}', function (Post $post) {
+    $post->delete();
+    return response()->json(null, 204);
+});
+
 // Catch-all route for React app - let React Router handle front-end routing
 Route::get('/{any}', function () {
     return view('app'); // Your main React app blade view

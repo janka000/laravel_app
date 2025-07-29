@@ -7,6 +7,7 @@ export default function PostPage() {
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     axios.get(`/api/posts/${id}`)
@@ -19,6 +20,20 @@ export default function PostPage() {
         setLoading(false);
       });
   }, [id]);
+
+  const handleDelete = () => {
+    if (window.confirm('Are you sure you want to delete this post?')) {
+      setDeleting(true);
+      axios.delete(`/api/posts/${id}`)
+        .then(() => {
+          navigate('/');
+        })
+        .catch(() => {
+          setDeleting(false);
+          alert('Failed to delete the post.');
+        });
+    }
+  };
 
   if (loading) return <div>Loading...</div>;
   if (!post) return <div>Post not found.</div>;
@@ -35,9 +50,18 @@ export default function PostPage() {
         </button>
 
         {/* Edit post page */}
-        <Link to={`/posts/${id}/edit`} className="btn btn-primary">
+        <Link to={`/posts/${id}/edit`} className="btn btn-primary me-2">
           Edit Post
         </Link>
+
+        {/* Delete post button */}
+        <button
+          onClick={handleDelete}
+          className="btn btn-danger"
+          disabled={deleting}
+        >
+          {deleting ? 'Deleting...' : 'Delete Post'}
+        </button>
       </div>
     </div>
   );
